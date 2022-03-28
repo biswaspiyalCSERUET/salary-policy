@@ -1,28 +1,30 @@
 function takeInfo() {
-    let basicSalary=document.getElementById("initialSalary").value;
-    let basicParsedSalary = parseFloat(basicSalary);
+
+    //initialization of the variables, capturing the value of the particular ids
+    let initialSalary=document.getElementById("initialSalary").value;
+    let initialParsedSalary = parseFloat(initialSalary);
     let incrementation = document.getElementById("increment").value;
     let yearOfJob= document.getElementById("year").value;
-    console.log(basicSalary, incrementation, yearOfJob);
 
-    // let incrementedSalary = basicSalary * (incrementation/100);
+    //first incrementation of the initial salary
+    let totalCurrentSalary = initialParsedSalary + (initialParsedSalary * (incrementation/100));
 
-    // console.log(incrementedSalary);
+    //total salary count starting
+    var sumOfSalary= initialParsedSalary + totalCurrentSalary;
 
-    let totalCurrentSalary = basicParsedSalary + (basicParsedSalary * (incrementation/100));
-
-    console.log(totalCurrentSalary);
-    var sumOfSalary=0;
-
-    for(let i=0; i<yearOfJob*2; i++){
-        sumOfSalary = totalCurrentSalary + (totalCurrentSalary * (incrementation/100));
-        // sumOfSalary = totalCurrentSalary + sumOfSalary;
-        console.log(sumOfSalary);
+    //looping through the incrementation and total salary count
+    for(let i=1; i<yearOfJob*2; i++){
+        totalCurrentSalary = totalCurrentSalary + (totalCurrentSalary * (incrementation/100));
+        console.log(totalCurrentSalary);
+        sumOfSalary = sumOfSalary + totalCurrentSalary;
     }
 
+    //showing the current incremented salary
     var newSalary = document.getElementById("showSalary");
     newSalary.innerHTML=totalCurrentSalary;
 
+    //showing the total salary since the starting
+    var firstToLastSalary = document.getElementById("totalSalary");
+    firstToLastSalary.innerHTML=sumOfSalary;
 
-    
 }

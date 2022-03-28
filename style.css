@@ -1,3 +1,14 @@
 body{
     background-color: lightcyan;
 }
+#showSalary{
+    width: 200px;
+    border: 2px solid black;
+    background: yellow;
+}
+
+#totalSalary{
+    width: 200px;
+    border: 2px solid black;
+    background: lightgreen;
+}
