@@ -1,5 +1,7 @@
 body{
     background-color: lightcyan;
+    margin-top: 100px;
+    margin-left: 100px;
 }
 #showSalary{
     width: 200px;

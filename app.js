@@ -9,15 +9,32 @@ function takeInfo() {
     //first incrementation of the initial salary
     let totalCurrentSalary = initialParsedSalary + (initialParsedSalary * (incrementation/100));
 
+    console.log(totalCurrentSalary);
+
+    let firstIncrementedSalary = (initialParsedSalary * 6) + (totalCurrentSalary * 6);
+    console.log(firstIncrementedSalary);
+
     //total salary count starting
-    var sumOfSalary= initialParsedSalary + totalCurrentSalary;
+
+    var newSumOfSalary = firstIncrementedSalary;
 
     //looping through the incrementation and total salary count
     for(let i=1; i<yearOfJob*2; i++){
+
         totalCurrentSalary = totalCurrentSalary + (totalCurrentSalary * (incrementation/100));
-        console.log(totalCurrentSalary);
-        sumOfSalary = sumOfSalary + totalCurrentSalary;
+        console.log("Here is the:" + totalCurrentSalary);
+        
+        for(let j=1; j<yearOfJob*2-2; j++){
+            newSumOfSalary = newSumOfSalary + (totalCurrentSalary * 6);
+            console.log(newSumOfSalary);
+            if (j=yearOfJob*2) {
+                var testingSalary = newSumOfSalary;
+                console.log("We need this:" + testingSalary);
+                break;
+            }
+        }
     }
+    
 
     //showing the current incremented salary
     var newSalary = document.getElementById("showSalary");
@@ -25,6 +42,6 @@ function takeInfo() {
 
     //showing the total salary since the starting
     var firstToLastSalary = document.getElementById("totalSalary");
-    firstToLastSalary.innerHTML=sumOfSalary;
+    firstToLastSalary.innerHTML=newSumOfSalary;
 
 }
